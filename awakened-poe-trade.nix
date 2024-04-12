@@ -20,15 +20,6 @@ let
     comment = appimage.meta.description;
   };
 in
-  pkgs.stdenv.mkDerivation {
-    pname = "awakened-poe-trade-nix";
-    version = "0.0.1";
-
-    dontUnpack = true;
-
-    installPhase = ''
-      mkdir -p $out/{bin,share}
-    '';
-    
-    buildInputs = [ appimage desktopItem ];
+  {
+    inherit appimage desktopItem;
   }
