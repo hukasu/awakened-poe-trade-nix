@@ -14,10 +14,21 @@ let
     };
   };
   desktopItem = pkgs.makeDesktopItem {
-    name = appimage.name;
+    name = "AwakenedPoETrade";
     exec = appimage.name;
     desktopName = "Awakened PoE Trade";
     comment = appimage.meta.description;
   };
 in
-  { inherit appimage desktopItem; }
+  pkgs.stdenv.mkDerivation {
+    pname = "awakened-poe-trade-nix";
+    version = "0.0.1";
+
+    dontUnpack = true;
+
+    installPhase = ''
+      mkdir -p $out/{bin,share}
+    '';
+    
+    buildInputs = [ appimage desktopItem ];
+  }
