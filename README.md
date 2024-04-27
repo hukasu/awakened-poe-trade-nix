@@ -7,7 +7,7 @@ Add this to your `configuration.nix`
 let
   awakened-poe-trade = import (builtins.fetchGit { url = "https://github.com/hukasu/awakened-poe-trade-nix"; ref = "refs/tags/v0.0.3"; });
 in {
-  environment.packages = [
+  environment.systemPackages = [
     # This is the to add the application
     awakened-poe-trade.app
     # Add this to add a Desktop Item
