@@ -15,7 +15,7 @@ let
   };
   desktopItem = pkgs.makeDesktopItem {
     name = "AwakenedPoETrade";
-    exec = appimage.name;
+    exec = appimage.pname;
     icon = "awakened-poe-trade";
     desktopName = "Awakened PoE Trade";
     comment = appimage.meta.description;
