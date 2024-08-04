@@ -5,7 +5,7 @@ A simple derivation to load Awakened PoE Trade's Appimage on Nix.
 Add this to your `configuration.nix`
 ```
 let
-  awakened-poe-trade = import (builtins.fetchGit { url = "https://github.com/hukasu/awakened-poe-trade-nix"; ref = "refs/tags/v0.0.4"; });
+  awakened-poe-trade = import (builtins.fetchGit { url = "https://github.com/hukasu/awakened-poe-trade-nix"; ref = "refs/tags/v0.0.5"; });
 in {
   environment.systemPackages = [
     # This is the to add the application
