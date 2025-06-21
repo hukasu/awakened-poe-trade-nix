@@ -1,12 +1,12 @@
 let
-  nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-24.11";
+  nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-25.05";
   pkgs = import nixpkgs { config = {}; overlays = [ ]; };
   system = builtins.currentSystem;
   extensions =
     (import (builtins.fetchGit {
       url = "https://github.com/nix-community/nix-vscode-extensions";
       ref = "master";
-      rev = "0a98964ab8b3af78a123ae1e3d2123f25a19c269";
+      rev = "8368fd526c329cb83a00f9e3cbc35a89599d5ced";
     })).extensions.${system};
   extensionsList = with extensions.vscode-marketplace; [ ];
   buildInputs = with pkgs; [ ];
