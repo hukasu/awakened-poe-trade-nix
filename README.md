@@ -8,7 +8,7 @@ let
   awakened-poe-trade = import (
     builtins.fetchGit {
       url = "https://github.com/hukasu/awakened-poe-trade-nix";
-      ref = "refs/tags/v0.0.6";
+      ref = "refs/tags/v0.0.7";
     }
   );
 in {
